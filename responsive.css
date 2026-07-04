@@ -1,0 +1,77 @@
+/* =========================================================
+   ADELI EMBUTIDOS — Responsivo
+   ========================================================= */
+
+/* Tablets */
+@media (max-width: 1024px){
+  .cards{ grid-template-columns: repeat(2, 1fr); }
+  .diferenciais-grid{ grid-template-columns: repeat(2, 1fr); }
+  .sobre-grid{ grid-template-columns: 1fr; }
+  .sobre-imagem{ aspect-ratio: 16/9; max-width: 560px; margin: 0 auto; }
+  .footer-grid{ grid-template-columns: 1fr 1fr; row-gap: 36px; }
+  .hero h1{ font-size: 46px; }
+}
+
+/* Menu mobile + ajustes gerais */
+@media (max-width: 860px){
+  .top-content{ justify-content:center; text-align:center; }
+  .top-right{ gap: 14px; }
+  .top-right span:first-child{ display:none; }
+
+  .menu-toggle{ display:block; }
+
+  nav{
+    position:absolute;
+    top: 100%;
+    left:0; right:0;
+    background: var(--cor-creme);
+    border-bottom: 1px solid rgba(42,33,26,0.08);
+    max-height: 0;
+    overflow:hidden;
+    transition: max-height .3s ease;
+  }
+  nav.aberto{ max-height: 320px; }
+  nav ul{
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 32px 20px;
+  }
+  nav ul li{ border-top: 1px solid rgba(42,33,26,0.06); }
+  nav a{ display:block; padding: 14px 0; }
+
+  .btn-menu{ display:none; }
+
+  .selo{ width: 100px; height: 100px; right: 24px; bottom: 24px; }
+}
+
+/* Celulares */
+@media (max-width: 640px){
+  .container{ padding: 0 20px; }
+
+  .hero{ min-height: 82vh; }
+  .hero-content{ padding: 90px 20px 80px; }
+  .hero h1{ font-size: 34px; }
+  .hero p{ font-size: 14.5px; }
+  .hero-buttons{ flex-direction:column; }
+  .selo{ display:none; }
+
+  .categorias{ padding: 70px 0; }
+  .cards{ grid-template-columns: 1fr; }
+
+  .titulo h2{ font-size: 28px; }
+
+  .sobre{ padding: 0 0 70px; }
+  .sobre-texto h2{ font-size: 26px; }
+  .numeros{ gap: 26px; flex-wrap: wrap; }
+
+  .diferenciais{ padding: 60px 0; }
+  .diferenciais-grid{ grid-template-columns: 1fr; }
+
+  .cta{ padding: 70px 0; }
+  .cta-content h2{ font-size: 26px; }
+
+  .footer-grid{ grid-template-columns: 1fr; text-align:center; }
+  .footer-grid a{ margin: 0 auto 12px; }
+
+  .whatsapp{ width: 50px; height: 50px; right: 16px; bottom: 16px; }
+}
