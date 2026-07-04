@@ -586,6 +586,221 @@ footer{
 }
 
 /* -----------------------------
+   Navegação SPA — transição de conteúdo
+------------------------------ */
+#conteudo{
+  transition: opacity .16s ease;
+}
+#conteudo.conteudo-saindo{
+  opacity: 0;
+}
+nav a.active{
+  color: var(--cor-vinho);
+}
+nav a.active::after{
+  width: 100%;
+}
+
+/* -----------------------------
+   Topo de página interna
+------------------------------ */
+.pagina-topo{
+  background:
+    linear-gradient(120deg, rgba(42,33,26,0.86), rgba(78,20,25,0.62)),
+    url('https://images.unsplash.com/photo-1607623814075-e51df1bdc50f?auto=format&fit=crop&w=1600&q=80') center/cover;
+  color: var(--cor-creme);
+  padding: 96px 0 74px;
+  text-align: center;
+}
+.pagina-topo .eyebrow{
+  justify-content: center;
+  color: var(--cor-mostarda);
+  margin-bottom: 14px;
+}
+.pagina-topo .eyebrow::before{ display:none; }
+.pagina-topo h1{
+  font-family: var(--fonte-display);
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.pagina-topo p{
+  color: rgba(251,246,236,0.85);
+  font-size: 15px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* -----------------------------
+   Página: Produtos
+------------------------------ */
+.lista-produtos{ padding: 100px 0; }
+
+.produto-box{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 90px;
+}
+.produto-box:last-child{ margin-bottom: 0; }
+.produto-box.reverse > img{ order: 2; }
+.produto-box img{
+  border-radius: var(--raio);
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  box-shadow: 0 18px 36px rgba(42,33,26,0.14);
+}
+.produto-box h2{
+  font-family: var(--fonte-display);
+  font-size: 32px;
+  font-weight: 700;
+  margin: 12px 0 14px;
+}
+.produto-box p{
+  color: var(--cor-texto-suave);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.link-produto{
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--cor-vinho);
+  border-bottom: 1.5px solid var(--cor-mostarda);
+  padding-bottom: 3px;
+}
+.link-produto:hover{ color: var(--cor-vinho-escuro); }
+
+/* -----------------------------
+   Página: Sobre
+------------------------------ */
+.sobre-pagina{ padding: 100px 0 0; }
+
+.missao{ padding: 100px 0; }
+.cards-missao{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.cards-missao > div{
+  background: var(--cor-creme);
+  border: 1px solid rgba(42,33,26,0.06);
+  border-radius: var(--raio);
+  padding: 38px 30px;
+  text-align: center;
+}
+.numero-missao{
+  display: inline-block;
+  font-family: var(--fonte-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cor-mostarda);
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+.cards-missao h3{
+  font-family: var(--fonte-display);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.cards-missao p{
+  color: var(--cor-texto-suave);
+  font-size: 14px;
+}
+
+/* -----------------------------
+   Página: Contato
+------------------------------ */
+.contato{ padding: 100px 0; }
+.contato-grid{
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 64px;
+}
+.contato-info h2{
+  font-family: var(--fonte-display);
+  font-size: 34px;
+  font-weight: 700;
+  margin: 12px 0 14px;
+}
+.contato-info > p{
+  color: var(--cor-texto-suave);
+  font-size: 15px;
+  margin-bottom: 32px;
+  max-width: 420px;
+}
+.contato-item{
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+.contato-item .icone-svg{
+  width: 20px; height: 20px;
+  stroke: var(--cor-vinho);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.contato-item h3{
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cor-vinho);
+  margin-bottom: 4px;
+}
+.contato-item p, .contato-item a{
+  font-size: 14.5px;
+  color: var(--cor-texto-suave);
+}
+.contato-item a:hover{ color: var(--cor-vinho); }
+
+.contato-form{
+  background: var(--cor-creme);
+  border: 1px solid rgba(42,33,26,0.07);
+  border-radius: var(--raio);
+  padding: 36px;
+  box-shadow: 0 20px 40px rgba(42,33,26,0.08);
+}
+.contato-form form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contato-form input,
+.contato-form textarea{
+  font-family: var(--fonte-corpo);
+  font-size: 14px;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  border: 1px solid rgba(42,33,26,0.12);
+  border-radius: var(--raio);
+  padding: 13px 16px;
+}
+.contato-form input::placeholder,
+.contato-form textarea::placeholder{
+  color: var(--cor-texto-suave);
+  opacity: 0.7;
+}
+.contato-form textarea{
+  min-height: 130px;
+  resize: vertical;
+}
+.contato-form input:focus,
+.contato-form textarea:focus{
+  outline: none;
+  border-color: var(--cor-vinho);
+}
+.contato-form button{
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+/* -----------------------------
    WhatsApp flutuante
 ------------------------------ */
 .whatsapp{
